@@ -1,0 +1,137 @@
+{% load static %}
+<html>
+    <head>
+        <title>Register to Play</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    </head>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            background-color:#F2EEE8;
+            background-repeat: no-repeat;
+            background-size: auto;
+            color: #000;
+            height: auto;
+        }
+        .menuBar {
+            list-style: none;
+            position: fixed;
+            right: 1px;
+            background-color: purple;
+            padding: 2px 0;
+            z-index: 1;
+            height: 45px;
+            width: 100%;
+        }
+        .menuBar li {
+            list-style: none;
+            float: right;
+            margin-top: 10px;
+        }
+        .menuBar a {
+            padding: 6px 15px;
+            color: #D3BFA8;
+            border: 1px solid #D3BFA8;
+            margin: 2px 10px;
+            text-decoration: none;
+            box-shadow: 2px 1px 10px #D3BFA8;
+            font-family: Calibri;
+        }
+        .menuBar a:hover {
+            background-color: #D3BFA8;
+            color: #000;
+            text-decoration: none;
+            box-shadow: 2px 1px 10px #000;
+            transition: 1.5s;
+            font-family: Calibri;
+        }
+        .comp {
+            position: fixed;
+            font-size: 30px;
+            margin-left: 30px;
+            background-color: red;
+            font-family: "Agency FB";
+            color: darkkhaki;
+            color: #F7F4F0;
+        }
+        .container {
+            position: relative;
+            top: 80px;
+        }
+        .title1 {
+            text-align: center;
+            font-size: 25px;
+            border: 1px solid #000;
+            color: #fff;
+            padding: 10px;
+            background-color: red;
+            box-shadow: 2px 2px 10px black;
+        }
+        .footer {
+            width: 99.9%;
+            text-align: center;
+            font-size: 15px;
+            position: absolute;
+            top: 950px;
+            left: 1px;
+            padding: 8px;
+            border: 1px solid #D3BFA8;
+            color: #D3BFA8;
+            background-color: purple;
+        }
+
+        li {
+            list-style: none;
+            display: inline;
+        }
+        form {
+            background-color: purple;
+            padding: 20px;
+            box-shadow: 2px 2px 10px black;
+        }
+
+        .btn {
+           position: relative;
+            left: 200px;
+            padding: 3px 20px 3px 20px;}
+
+    </style>
+<body>
+    <header>
+        <ul class="menuBar">
+            <div class="comp">Cult Fit</div>
+            <li><a href="/sports/">Home</a></li>
+        </ul>
+    </header>
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="title1"> Register to Play </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ aform.as_p }}<br>
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </form>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="title1"> Gymnastics </div>
+                    <h3> <u> <i>We Made to Make you Burn</i></u></h3>
+                    <div class="img1">
+                        <img class="pic1" height="500" width="500" alt="Cult Fit" src="{% static 'images/gym.jpg'%}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="footer">copyrights &copy; 2018 | www.cultfit.com</div>
+    </div>
+</body>
+</html>
